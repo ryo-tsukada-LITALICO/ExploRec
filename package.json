@@ -1,0 +1,8 @@
+{
+  "name": "explorec",
+  "private": true,
+  "scripts": {
+    "test": "node --test",
+    "test:single": "node --test tests/state.test.js"
+  }
+}

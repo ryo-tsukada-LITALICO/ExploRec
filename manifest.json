@@ -1,0 +1,63 @@
+{
+  "manifest_version": 3,
+  "name": "ExploRec",
+  "version": "1.0.0",
+  "description": "役割: QAの探索的テスト操作を記録してJSON出力する拡張",
+  "permissions": [
+    "downloads",
+    "storage",
+    "tabs",
+    "scripting",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "ExploRec"
+  },
+  "side_panel": {
+    "default_path": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "inject_main.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": false
+    },
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start",
+      "world": "ISOLATED",
+      "all_frames": false
+    }
+  ],
+  "commands": {
+    "toggle-recording": {
+      "description": "記録開始/停止を切り替える",
+      "suggested_key": {
+        "default": "Ctrl+Shift+E"
+      }
+    },
+    "take-screenshot": {
+      "description": "スクリーンショットを取得する",
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y"
+      }
+    }
+  }
+}
