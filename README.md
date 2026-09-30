@@ -3,6 +3,9 @@
 QAの探索的テストにおけるブラウザ操作を自動記録し、任意タイミングのスクリーンショットとあわせて、
 人間が読める日本語のステップ列としてJSONに書き出すChrome拡張機能（Manifest V3）です。
 
+<img width="1800" height="1078" alt="ExploRecの説明" src="https://github.com/user-attachments/assets/03b09113-17b9-4240-ac1c-30a1c009acb3" />
+
+
 ## 概要
 
 - ページ上のクリック・入力・表示メッセージ・画面遷移を自動で記録します。
